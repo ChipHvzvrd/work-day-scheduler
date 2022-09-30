@@ -28,9 +28,18 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span id="spanner" class="close">&times;</span>
+        <h4>What would you like to add to the agenda today?</h4>
+        <input id="userinput" type="text">
+        <button id="addAgenda" type="submit">Submit</button>
+        <button id="removeAgenda" type="submit">Remove</button>
+      </div>
+    </div>
     <div class="container-fluid">
       <!-- Timeblocks go here -->
-      <div id="firstRow" class="row"></div>
+      <button id="firstRow" class="row"></button>
       <div id="appendRow"></div>
     </div>
     <div id="hour"></div>

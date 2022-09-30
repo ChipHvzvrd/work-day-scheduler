@@ -6,7 +6,7 @@ const startTime = 9;
 const currentHour = moment().hour();
 currentDayEl.innerHTML = currentDateTime;
 hora.innerHTML = currentHour;
-hora.style.visibility = "hidden";
+hora.style.visibility = "visible";
 
 const initRow = timeRow.innerHTML = moment(startTime, "h").format("HH");
 
@@ -16,6 +16,8 @@ function nextRow(name) {
     rowEl.textContent = name;
     return rowEl;
 }
+
+
 
 const newRow = document.querySelector("#appendRow");
 
@@ -69,47 +71,262 @@ const rows = document.getElementById("append");
 
 function statusRow() {
     if (row0 < currentTime){
+        timeRow.innerHTML += "<p>:00AM</p>"
         timeRow.style.backgroundColor = "#F67280";
     }
     if (row1 < currentTime){
+        aOne.innerHTML += "<p>:00AM</p>"
         aOne.style.backgroundColor = "#F67280";
     }
     if (row2 < currentTime){
+        aTwo.innerHTML += "<p>:00AM</p>"
         aTwo.style.backgroundColor = "#F67280";
     }
     if (row3 < currentTime){
+        aThree.innerHTML += "<p>:00AM</p>"
         aThree.style.backgroundColor = "#F67280";
     }
     if (row4 < currentTime){
+        aFour.innerHTML = "<p>1:00PM</p>"
         aFour.style.backgroundColor = "#F67280";
     }
     if (row5 < currentTime){
+        aFive.innerHTML = "<p>2:00PM</p>"
         aFive.style.backgroundColor = "#F67280";
     }
     if (row6 < currentTime){
+        aSix.innerHTML = "<p>3:00PM</p>"
         aSix.style.backgroundColor = "#F67280";
     }
     if (row7 < currentTime){
+        aSeven.innerHTML = "<p>4:00PM</p>"
         aSeven.style.backgroundColor = "#F67280";
     }
     if (row8 < currentTime){
+        aEight.innerHTML = "<p>5:00PM</p>"
         aEight.style.backgroundColor = "#F67280";
     }
     if (row9 < currentTime){
+        aNine.innerHTML = "<p>6:00PM</p>"
         aNine.style.backgroundColor = "#F67280";
     }
     if (row10 < currentTime){
+        aTen.innerHTML = "<p>7:00PM</p>"
         aTen.style.backgroundColor = "#F67280";
     }
     if (row11 < currentTime){
+        aEleven.innerHTML = "<p>8:00PM</p>"
         aEleven.style.backgroundColor = "#F67280";
     }
     if (row12 < currentTime){
+        aTwelve.innerHTML = "<p>9:00PM</p>"
         aTwelve.style.backgroundColor = "#F67280";
     }
 }
 
-
-
 statusRow();
+
+var modal = document.getElementById("myModal");
+const addAgenda = document.getElementById("addAgenda");
+const spanner = document.getElementById("spanner");
+const removeBtn = document.getElementById("removeAgenda");
+
+timeRow.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow0);
+    function agendaRow0() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        timeRow.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    timeRow.innerHTML = row0;
+})
+
+
+aOne.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow1);
+    function agendaRow1() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aOne.innerText = input;
+        localStorage.setItem("input", input);
+        var localMem1 = JSON.stringify(input);
+        console.log(localMem1);
+        }
+        return;
+});
+
+removeBtn.addEventListener("click", () => {
+    aOne.innerHTML = row1;
+})
+
+aTwo.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow2);
+    function agendaRow2() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aTwo.innerText = input2;
+        localStorage.setItem("input2", input);
+        var localMem2 = JSON.stringify(input);
+        console.log(localMem2);
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aTwo.innerHTML = row2;
+})
+
+aThree.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow3);
+    function agendaRow3() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aThree.innerText = input;
+        localStorage.setItem("input3", input);
+        var localMem3 = JSON.stringify(input);
+        console.log(localMem3);
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aThree.innerHTML = row3;
+})
+aFour.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow4);
+    function agendaRow4() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aTwo.innerText = input;
+        localStorage.setItem("input", input);
+        var localMem4 = JSON.stringify(input);
+        console.log(localMem4);
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aFour.innerHTML = row4;
+})
+aFive.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow5);
+    function agendaRow5() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aFive.innerText = input;
+        localStorage.setItem("input5", input);
+        var localMem5 = JSON.stringify(input);
+        console.log(localMem5);
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aTwo.innerHTML = row5;
+})
+aSix.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow6);
+    function agendaRow6() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aSix.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aSix.innerHTML = row6;
+})
+aSeven.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow7);
+    function agendaRow7() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aSeven.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aSeven.innerHTML = row7;
+})
+aEight.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow8);
+    function agendaRow8() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aEight.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aEight.innerHTML = row8;
+})
+aNine.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow9);
+    function agendaRow9() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aSeven.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aNine.innerHTML = row9;
+})
+aTen.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow10);
+    function agendaRow10() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aTen.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aTen.innerHTML = row10;
+})
+aEleven.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow11);
+    function agendaRow11() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aEleven.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aEleven.innerHTML = row11;
+})
+aTwelve.addEventListener("click", () => {
+    modal.style.display = "block";
+    addAgenda.addEventListener("click", agendaRow12);
+    function agendaRow12() {
+        let input = document.getElementById("userinput").value;
+        modal.style.display = "none";
+        aTwelve.innerText = input;
+        }
+        return;
+});
+removeBtn.addEventListener("click", () => {
+    aTwelve.innerHTML = row12;
+})
+
+
+
+spanner.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+
+addAgenda.addEventListener("click", agendaRow2);
 
